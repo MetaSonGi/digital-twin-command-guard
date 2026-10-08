@@ -1,0 +1,16 @@
+{
+  "conveyor-01": {
+    "version": 7,
+    "temperature": 38,
+    "max_temperature": 65,
+    "max_speed": 100,
+    "interlock": false
+  },
+  "robot-01": {
+    "version": 3,
+    "temperature": 72,
+    "max_temperature": 65,
+    "max_speed": 60,
+    "interlock": true
+  }
+}

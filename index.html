@@ -1,0 +1,7 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>디지털 트윈 제어 요청 검증기</title>
+<style>body{font:16px system-ui;max-width:850px;margin:40px auto;padding:20px;background:#101925;color:#e5f0fa}textarea{width:95%;height:145px}button{padding:12px;background:#79dece;border:0;border-radius:8px}pre{white-space:pre-wrap;background:#213043;padding:20px}</style>
+<h1>디지털 트윈 제어 요청 검증기</h1><p>요청 검증만 수행합니다. 실제 장비 명령은 전송하지 않습니다.</p>
+<h2>장비 상태</h2><pre id="assets"></pre><h2>제어 요청</h2>
+<textarea id="proposal">{"asset_id":"conveyor-01","operation":"set_speed","value":40,"observed_version":7}</textarea>
+<p><button id="run">요청 검증</button></p><pre id="result">검증 결과가 여기에 표시됩니다.</pre>
+<script>fetch('/api/assets').then(r=>r.json()).then(v=>document.querySelector('#assets').textContent=JSON.stringify(v,null,2));document.querySelector('#run').onclick=async()=>{try{const r=await fetch('/api/proposals',{method:'POST',headers:{'Content-Type':'application/json'},body:document.querySelector('#proposal').value});document.querySelector('#result').textContent=JSON.stringify(await r.json(),null,2)}catch(e){document.querySelector('#result').textContent=String(e)}};</script></html>

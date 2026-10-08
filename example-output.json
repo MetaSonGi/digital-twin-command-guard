@@ -1,0 +1,13 @@
+{
+  "valid_proposal": {
+    "allowed": true,
+    "reason": "validated_dry_run",
+    "actuated": false,
+    "asset_id": "conveyor-01",
+    "proposed_speed": 40
+  },
+  "stale_proposal": {
+    "allowed": false,
+    "reason": "stale_state"
+  }
+}
